@@ -1,23 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Events</title>
-<style type="text/css">
-.error{
-	color:#ff0000;
-}
-.errorblock{
-color:#000;
-background-color: #ffEEEE;
-border: 3px solid #ff0000;
-padding: 8px;
-margin: 16px;
-}
-</style>
+<link href="<c:url value="/css/style.css" />" rel="stylesheet">
 </head>
 <body>
 	<form:form commandName="event">

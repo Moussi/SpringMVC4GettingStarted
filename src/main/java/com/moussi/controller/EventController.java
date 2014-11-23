@@ -2,12 +2,15 @@ package com.moussi.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.moussi.model.Event;
 
 @Controller
+@SessionAttributes("event")
 public class EventController {
 
 	@RequestMapping(value="/event",method=RequestMethod.GET)
@@ -19,10 +22,12 @@ public class EventController {
 		return "event";
 	}
 	
-	@RequestMapping(value="/greeting")
-	public String sayHello(Model model)
+	@RequestMapping(value="/event",method=RequestMethod.POST)
+	public String ProcessEventPage(@ModelAttribute("event")Event event)
 	{
-		model.addAttribute("greeting", "Hello Moussi");
-		return "hello";
+		System.out.println(event);
+		return "redirect:greeting.html";
 	}
+	
+
 }

@@ -7,6 +7,9 @@
 <title>Hello</title>
 </head>
 <body>
-<h1>Hello ${greeting}</h1>
+<h1>Hello ${event.name}</h1>
+<br>
+<a href="event.html">Add Event >></a>
+<a href="attendee.html">Add Attendee. >></a>
 </body>
 </html>
