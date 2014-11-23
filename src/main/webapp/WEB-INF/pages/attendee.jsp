@@ -28,7 +28,6 @@
 	<form:input path="phone" cssErrorClass="error"/>
 	<form:errors path="phone" cssClass="error"/>
 	<br>
-<!-- 	<input type="submit" class="btn" value="Enter Attendee"/>  -->
 	<button type="submit"><spring:message code="attendee.submit"/></button>
 	</form:form>
 </body>
