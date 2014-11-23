@@ -1,8 +1,10 @@
 package com.moussi.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -19,8 +21,12 @@ public class AttendeeController {
 	}
 
 	@RequestMapping(value="/attendee",method=RequestMethod.POST)
-	public String ProcessAttendeePage(@ModelAttribute("attendee")Attendee attendee)
+	public String ProcessAttendeePage(@Valid Attendee attendee,BindingResult result,Model m)
 	{
+		if(result.hasErrors())
+		{
+			return "attendee";
+		}
 		System.out.println(attendee);
 		return "redirect:index.html";
 	}
